@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+}
+.wrapper {
+  .navigation-bar {
+    background-color: #f3f2f3;
+    padding: 10px 0;
+
+    .nav {
+      margin: auto;
+      width: 89%;
+      ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-end;
+        // border: 1px solid red;
+
+        li {
+          font-weight: 700;
+          font-size: 16px;
+          color: #171719;
+          font-family: Moderat, Helvetica Neue, Arial;
+          padding: 0 0 0 50px;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    // border: 1px solid red;
+
+    .second-nav {
+      display: flex;
+      align-items: center;
+      margin: auto;
+      width: 89%;
+
+      justify-content: space-between;
+      padding-top: 20px;
+      .navin-nav {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        h2 {
+          font-family: Moderat, Helvetica Neue, Arial;
+          font-size: 30px;
+        }
+     
+        ul {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+       
+          li {
+            padding: 0 27.7px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #171719;
+            font-family: Moderat, Helvetica Neue, Arial;
+          }
+        }
+      }
+    }
+
+    .navbar-buttons {
+      display: flex;
+      gap: 30px;
+      .button1 {
+        align-items: center;
+        padding: 10px 25px;
+        border: 2px solid #000;
+        background: #fff;
+        color: #000;
+        font-size: 16px;
+        font-family: Moderat, Helvetica Neue, Arial;
+        font-weight: 700;
+
+      }
+      .button2 {
+        align-items: center;
+        padding: 15px 35px;
+        border: none;
+        background: #ffbdbb;
+        font-size: 16px;
+        font-family: Moderat, Helvetica Neue, Arial;
+        font-weight: 700;
+      }
+    }
+  }
+}
