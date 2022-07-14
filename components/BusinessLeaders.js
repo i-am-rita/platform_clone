@@ -5,15 +5,15 @@ const BusinessLeaders = () => {
     <div className="developer-section">
       <div className="first-section">
         <div className="developers">
-          <h2>Developers</h2>
+          <h2>Business Leaders</h2>
           <h3>
-            Eliminate the need to build, manage, and maintain core
-            infrastructure.
+            Make rapid innovation a reality, and enable your teams to build
+            engaging customer experiences, faster.
           </h3>
         </div>
         <div className="image-section">
           <img
-            src="https://platform.sh/images/home/developer-ui-1@2x.png"
+            src="https://platform.sh/images/home/businessleader-ui-1@2x.png"
             width="100%"
           />
         </div>
@@ -23,28 +23,28 @@ const BusinessLeaders = () => {
       <div className="second-section">
         <div className="card">
           <img
-            src="https://platform.sh/images/customers/color/grantstation-logo.jpg"
-            alt="GrantStation logo"
+            src="https://platform.sh/images/customers/color/burst.png"
+            alt="burst's logo"
             width="100px"
             height="50%"
             style={{ paddingBottom: "25px" }}
           />
           <p>
-            “Using Platform.sh, we’ve been able to make use of development and
-            staging environments to seamlessly test functionality additions,
-            improvements, and fixes—in a secure, safe manner—before pushing them
-            live to our customers.”
+            “Platform.sh goes beyond hosting; it’s an integrated solution, so we
+            can develop, build, and launch global platforms for our clients in
+            the most efficient, stable, and secure way. We can focus on our core
+            business. When we deploy, everything works.”
           </p>
           <div className="director-image">
             <img
               className="cecile-image"
-              src="https://platform.sh/images/spare-time/headshots/cecily.png"
-              alt="image Cecile"
+              src="https://platform.sh/images/home/hans_burst.png"
+              alt="Hans's image"
               width="100px"
             />
             <div className="director-detail">
-              <p className="name">Cecily Borzillo</p>
-              <p className="role">Director of Site Technology</p>
+              <p className="name">Hans Malthai</p>
+              <p className="role">Founder and CEO</p>
             </div>
           </div>
         </div>
@@ -53,32 +53,32 @@ const BusinessLeaders = () => {
           <h2> Features</h2>
           <div className="featured-details">
             <div className="feature">
-              <h3>Unify development silos</h3>
+              <h3>Effective scalability</h3>
               <p>
-                Create an instant application clone for every Git branch to
-                rapidly update, test, and deploy new features to production.
+                Scale resources seamlessly to meet business demands. Start
+                small, and grow as needed.
               </p>
             </div>
             <div className="feature">
-              <h3>Effortless development</h3>
+              <h3>Accelerated application development</h3>
               <p>
-                Benefit from automated deployments, stable environments, and a
-                consistent development workflow—without managing infrastructure.
+                Increase revenue and overall satisfaction by delivering amazing
+                digital experiences quickly.
               </p>
             </div>
             <div className="feature">
-              <h3>Secure by design</h3>
+              <h3>Resource optimization</h3>
               <p>
-                Develop on a single, global, secured cloud infrastructure, and
-                solve multiple customer needs across different industries and
-                geographies.
+                Free your teams to focus on your core business instead of
+                security and infrastructure management.
               </p>
             </div>
             <div className="feature">
-              <h3>Unmatched flexibility</h3>
+              <h3>Environmental awareness</h3>
               <p>
-                Build amazing websites and web apps in the languages and
-                frameworks of your choice.
+                Build, deploy and host on a cloud infrastructure that reduces
+                your carbon footprint through greater efficiency and improved
+                operating models.
               </p>
             </div>
           </div>
