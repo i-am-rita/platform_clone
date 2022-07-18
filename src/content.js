@@ -186,8 +186,8 @@ const Content = () => {
       </div>
       <div className="showcase-content">
         {value === 0 && <Developers handleSwitch={handleSwitch} />}
-        {value === 1 && <ITLeaders />}
-        {value === 2 && <BusinessLeaders />}
+        {value === 1 && <ITLeaders handleSwitch={handleSwitch} />}
+        {value === 2 && <BusinessLeaders handleSwitch={handleSwitch} />}
       </div>
 
       <div className="content-wrapper">

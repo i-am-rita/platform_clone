@@ -1,6 +1,6 @@
 import React from "react";
 import "../Compscss/Developers.scss";
-const ITLeaders = () => {
+const ITLeaders = ({ handleSwitch }) => {
   return (
     <div className="developer-section">
       <div className="first-section">
@@ -26,16 +26,20 @@ const ITLeaders = () => {
           <img
             src="https://platform.sh/images/industry/retail/sportrx-logo.png"
             alt="GrantStation logo"
-            width="100px"
-            height="50%"
-            style={{ paddingBottom: "25px" }}
+            width="50%"
+            // height="30px"
+            // style={{ marginBottom: "-50px" }}
           />
-          <p>
+
+          <p style={{ margin: "-140px 0 -200px 0" }}>
             “Our Platform.sh environment easily and automatically scales out to
             meet the demands of the incoming web traffic, and it’s
             triple-redundant to protect us against hardware failures.”
           </p>
-          <div className="director-image">
+          <div
+            className="director-image"
+            style={{ paddingBottom: "-50px !important" }}
+          >
             <img
               className="cecile-image"
               src="https://platform.sh/images/industry/retail/saaed-fattahi_sportrx.png"
@@ -84,8 +88,8 @@ const ITLeaders = () => {
         </div>
       </div>
       <div className="back-forth">
-        <p>- Business leaders</p>
-        <p>IT leaders -</p>
+        <p onClick={() => handleSwitch(0)}>- Business leaders</p>
+        <p onClick={() => handleSwitch(2)}>IT leaders -</p>
       </div>
     </div>
   );
