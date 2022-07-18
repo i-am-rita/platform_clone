@@ -1,6 +1,6 @@
 import React from "react";
 import "../Compscss/Developers.scss";
-const Developers = () => {
+const Developers = ({handleSwitch}) => {
   return (
     <div className="developer-section">
       <div className="first-section">
@@ -15,6 +15,7 @@ const Developers = () => {
           <img
             src="https://platform.sh/images/home/developer-ui-1@2x.png"
             width="100%"
+            alt="Developer section image"
           />
         </div>
       </div>
@@ -85,8 +86,8 @@ const Developers = () => {
         </div>
       </div>
       <div className="back-forth">
-        <p>- Business leaders</p>
-        <p>IT leaders -</p>
+        <p onClick={() => handleSwitch(2)}>- Business leaders</p>
+        <p onClick={() => handleSwitch(1)}>IT leaders -</p>
       </div>
     </div>
   );

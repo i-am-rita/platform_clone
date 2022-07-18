@@ -5,7 +5,7 @@ const BusinessLeaders = () => {
     <div className="developer-section">
       <div className="first-section">
         <div className="developers">
-          <h2>Business Leaders</h2>
+          <h2>Business <br/> Leaders</h2>
           <h3>
             Make rapid innovation a reality, and enable your teams to build
             engaging customer experiences, faster.
@@ -15,6 +15,7 @@ const BusinessLeaders = () => {
           <img
             src="https://platform.sh/images/home/businessleader-ui-1@2x.png"
             width="100%"
+            alt="Business leader image"
           />
         </div>
       </div>

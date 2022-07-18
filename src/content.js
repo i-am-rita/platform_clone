@@ -4,22 +4,33 @@ import Developers from "../components/Developers";
 import ITLeaders from "../components/ITLeaders";
 import "./App.scss";
 const Content = () => {
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
+  const [textColor, setTextColor] = useState("#797477");
+  const [marginBottomColor, setMarginBottomColor] = useState("#145cc6");
   const handleSwitch = (index) => {
     if (value === index) {
-      setValue("");
+      setValue(value);
     } else {
       setValue(index);
     }
+    // setTextColor(textColor === "#797477" ? "blue" : "red");
   };
 
   const handleNext = () => {
     // setActiveStep(con)
     console.log("active");
   };
+
+  // const handleColorChange = () => {
+  //   setTextColor(textColor === "#797477" ? "blue" : "black");
+  //   // setMarginBottomColor(marginBottomColor);
+  // };
+  // let numbers = [5, 1, 2, 6, 8];
+  // numbers.forEach((number) => console.log(number));
+
   return (
-    <div className="main-container">
+    <main className="main-container">
       <div className="content-wrapper">
         <div className="content">
           <h1>
@@ -33,10 +44,10 @@ const Content = () => {
         </div>
 
         {/* second */}
-        <div className="video-section">
+        <section className="video-section">
           <div className="youtube-video">
             <iframe
-              width="65%"
+              width="60%"
               height="390"
               src="https://www.youtube.com/embed/QNxlu3rISFg"
               title="We have secured $140M in Series D funding!"
@@ -49,21 +60,25 @@ const Content = () => {
             <p>
               Platform.sh secures $140 million in series D funding to support
               enterprises in scaling fleets of websites and applications. <br />
-              <a href="/" className="learn-more">
+              <a
+                href="https://platform.sh/blog/2022/platformsh-announces-140-million-series-d-funding/"
+                className="learn-more"
+              >
                 Learn more.
               </a>
             </p>
           </div>
-        </div>
+        </section>
 
-        <div className="brands">
+        <section className="brands">
           <div className="logos">
             <div>
               <picture>
-                <source
+                {/* <source
                   type="image"
                   srcset="https://platform.sh/images/customers/bw/mentos-logo-bw.webp"
-                />
+                  width="70%"
+                /> */}
                 <img
                   src="https://platform.sh/images/customers/bw/mentos-logo-bw.webp"
                   alt="mentos"
@@ -75,64 +90,67 @@ const Content = () => {
             <div>
               {" "}
               <picture>
-                <source
+                {/* <source
                   type="image"
                   srcset="https://platform.sh/images/customers/bw/ubaldi-logo-bw.webp"
-                />
+                  width="70%"
+                /> */}
                 <img
                   src="https://platform.sh/images/customers/bw/ubaldi-logo-bw.webp"
                   alt="mentos"
                   loading="lazy"
-                  width="50%"
+                  width="70%"
                 />
               </picture>
             </div>
 
             <div>
               <picture>
-                <source
+                {/* <source
                   type="image"
                   srcset="https://platform.sh/images/customers/bw/mizzou@1x.png"
-                />
+                  width="70%"
+                /> */}
                 <img
                   src="https://platform.sh/images/customers/bw/mizzou@1x.png"
                   alt="mentos"
                   loading="lazy"
-                  width="80%"
+                  width="70%"
                 />
               </picture>
             </div>
             <div>
               {" "}
               <picture>
-                <source
+                {/* <source
                   type="image"
                   srcset="https://platform.sh/images/customers/bw/Orange_logo.webp"
-                />
+                /> */}
                 <img
                   src="https://platform.sh/images/customers/bw/Orange_logo.webp"
                   alt="mentos"
                   loading="lazy"
-                  width="80%"
+                  width="70%"
                 />
               </picture>
             </div>
             <div>
               <picture>
-                <source
+                {/* <source
                   type="image"
                   srcset="https://platform.sh/images/customers/bw/british_council-logo-bw.webp"
-                />
+                  width="70%"
+                /> */}
                 <img
                   src="https://platform.sh/images/customers/bw/british_council-logo-bw.webp"
                   alt="mentos"
                   loading="lazy"
-                  width="40%"
+                  width="70%"
                 />
               </picture>
             </div>
           </div>
-        </div>
+        </section>
         {/* Put the above guy in another file for mapping and clean code */}
         <div className="flexibility">
           <div className="flexibility-text">
@@ -148,28 +166,28 @@ const Content = () => {
       <div className="dropdown">
         <div>
           {" "}
-          <h2 onClick={() => handleSwitch("1")}>
+          <h2 onClick={() => handleSwitch(0)}>
             <label for="">Developers</label>
           </h2>
         </div>
 
         {/* <div className="showcase"> */}
         <div>
-          <h2 onClick={() => handleSwitch("2")}>
+          <h2 onClick={() => handleSwitch(1)}>
             <label for="">IT Leaders</label>
           </h2>
         </div>
         <div>
           {" "}
-          <h2 onClick={() => handleSwitch("3")}>
+          <h2 onClick={() => handleSwitch(2)}>
             <label for="">Business Leaders</label>
           </h2>
         </div>
       </div>
       <div className="showcase-content">
-        {value === "1" && <Developers />}
-        {value === "2" && <ITLeaders />}
-        {value === "3" && <BusinessLeaders />}
+        {value === 0 && <Developers handleSwitch={handleSwitch} />}
+        {value === 1 && <ITLeaders />}
+        {value === 2 && <BusinessLeaders />}
       </div>
 
       <div className="content-wrapper">
@@ -332,16 +350,108 @@ const Content = () => {
           </div>
         </div>
         {/* End of what's new */}
-        <div className="solutions">
-          <div className="solution-content">
-            <h1>
-              Deliver solutions that drive transformation with Platform.sh
-            </h1>
-            <button className="buttonA">Get Started {">>"}</button>
-          </div>
+      </div>
+      <div className="solutions">
+        <div className="solution-content">
+          <h1>Deliver solutions that drive transformation with Platform.sh</h1>
+          <button className="buttonA">Get Started {">>"}</button>
         </div>
       </div>
-    </div>
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="platform">
+            <h2>platform.sh</h2>
+            <div className="deploy-numbers">
+              <span className="number">5</span>
+              <span className="number">1</span>
+              <span className="number">2</span>
+              <span className="number">6</span>
+              <span className="number">8</span>
+            </div>
+            <span className="deploy-text">
+              Deployments this week (including Fridays!)
+            </span>
+            <div className="media">
+              <p>git</p>
+              <p>twi</p>
+              <p>lin</p>
+              <p>fac</p>
+              <p>you</p>
+              <p>oka</p>
+            </div>
+          </div>
+          <div>
+            <h1 className="footer-section">Company</h1>
+            <ul className="section-content">
+              <li>About</li>
+              <li>Security and compliance</li>
+              <li>Trust Center</li>
+              <li>Board and investors</li>
+              <li>Press</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div>
+            <h1 className="footer-section">Regions</h1>
+            <ul className="section-content">
+              <li>Regions map</li>
+              <li>Australia</li>
+              <li>Canada</li>
+              <li>France</li>
+              <li>DACH</li>
+              <li>UK</li>
+            </ul>
+          </div>
+          <div>
+            <h1 className="footer-section">Resources</h1>
+            <ul className="section-content">
+              <li>Downloads</li>
+              <li>What is FleetOPs?</li>
+              <li>CI/CD on Platform.sh</li>
+              <li>Our blog</li>
+              <li>Partner portal</li>
+            </ul>
+            {/* <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p> */}
+          </div>
+          <div>
+            <h1 className="footer-section">Product</h1>
+            <ul className="section-content">
+              <li>What is Platform.sh?</li>
+              <li>
+                What can you run on <br /> Platform.sh?
+              </li>
+              <li>Drupal cloud hosting</li>
+              <li>Wordpress cloud hosting</li>
+              <li>Alternative to Kubernetes</li>
+              <li>Resources Auto-Scaling</li>
+              <li>Observability Suite</li>
+            </ul>
+          </div>
+        </div>
+        <div className="privacy-section">
+          <ul>
+            <li>System Status</li>
+            <li>Privacy</li>
+            <li>Terms of Service</li>
+            <li>Impressum</li>
+            <li>WCAG Compliance</li>
+            <li>Manage your cookie preferences</li>
+            <li>Report a Security Issue</li>
+          </ul>
+        </div>
+        <div className="support">
+          <p>© 2022 Platform.sh. All rights reserved.</p>
+          {/* oka */}
+          <a href="#">
+            Supported by Horizon 2020's SME Instrument - European Commission 🇪🇺
+          </a>
+        </div>
+      </footer>
+    </main>
   );
 };
 

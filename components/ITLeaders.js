@@ -15,6 +15,7 @@ const ITLeaders = () => {
           <img
             src="https://platform.sh/images/home/itleader-ui-1.png"
             width="100%"
+            alt="IT leader image"
           />
         </div>
       </div>
