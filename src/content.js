@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import BusinessLeaders from "../components/BusinessLeaders";
 import Developers from "../components/Developers";
 import ITLeaders from "../components/ITLeaders";
+import {
+  flexibility,
+  frame,
+  logos,
+  videoDescription,
+  inPicture,
+  gridSection,
+  feedback,
+  updateContent,
+  footerContent,
+} from "../dist/data";
 import "./App.scss";
 const Content = () => {
   const [value, setValue] = useState(0);
@@ -45,122 +56,61 @@ const Content = () => {
 
         {/* second */}
         <section className="video-section">
-          <div className="youtube-video">
-            <iframe
-              width="60%"
-              height="390"
-              src="https://www.youtube.com/embed/QNxlu3rISFg"
-              title="We have secured $140M in Series D funding!"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div className="vid-description">
-            <p>
-              Platform.sh secures $140 million in series D funding to support
-              enterprises in scaling fleets of websites and applications. <br />
-              <a
-                href="https://platform.sh/blog/2022/platformsh-announces-140-million-series-d-funding/"
-                className="learn-more"
-              >
-                Learn more.
-              </a>
-            </p>
-          </div>
+          {frame.map((item) => (
+            <div className="youtube-video">
+              <iframe
+                width={item.width}
+                height={item.height}
+                src={item.src}
+                title={item.title}
+                frameborder={item.frameborder}
+                allow={item.allow}
+                allowfullscreen
+              ></iframe>
+            </div>
+          ))}
+
+          {videoDescription.map((vid) => (
+            <div className="vid-description">
+              <p>
+                {vid.paragraph}
+                <br />
+                <a href={vid.link} className="learn-more">
+                  Learn more.
+                </a>
+              </p>
+            </div>
+          ))}
         </section>
 
         <section className="brands">
-          <div className="logos">
-            <div>
-              <picture>
-                {/* <source
-                  type="image"
-                  srcset="https://platform.sh/images/customers/bw/mentos-logo-bw.webp"
-                  width="70%"
-                /> */}
-                <img
-                  src="https://platform.sh/images/customers/bw/mentos-logo-bw.webp"
-                  alt="mentos"
-                  loading="lazy"
-                  width="70%"
-                />
-              </picture>
+          {logos.map((logo) => (
+            <div className="logos">
+              <div>
+                <picture>
+                  <img
+                    src={logo.source}
+                    alt={logo.alt}
+                    loading={logo.loading}
+                    width={logo.width}
+                  />
+                </picture>
+              </div>
             </div>
-            <div>
-              {" "}
-              <picture>
-                {/* <source
-                  type="image"
-                  srcset="https://platform.sh/images/customers/bw/ubaldi-logo-bw.webp"
-                  width="70%"
-                /> */}
-                <img
-                  src="https://platform.sh/images/customers/bw/ubaldi-logo-bw.webp"
-                  alt="mentos"
-                  loading="lazy"
-                  width="70%"
-                />
-              </picture>
-            </div>
-
-            <div>
-              <picture>
-                {/* <source
-                  type="image"
-                  srcset="https://platform.sh/images/customers/bw/mizzou@1x.png"
-                  width="70%"
-                /> */}
-                <img
-                  src="https://platform.sh/images/customers/bw/mizzou@1x.png"
-                  alt="mentos"
-                  loading="lazy"
-                  width="70%"
-                />
-              </picture>
-            </div>
-            <div>
-              {" "}
-              <picture>
-                {/* <source
-                  type="image"
-                  srcset="https://platform.sh/images/customers/bw/Orange_logo.webp"
-                /> */}
-                <img
-                  src="https://platform.sh/images/customers/bw/Orange_logo.webp"
-                  alt="mentos"
-                  loading="lazy"
-                  width="70%"
-                />
-              </picture>
-            </div>
-            <div>
-              <picture>
-                {/* <source
-                  type="image"
-                  srcset="https://platform.sh/images/customers/bw/british_council-logo-bw.webp"
-                  width="70%"
-                /> */}
-                <img
-                  src="https://platform.sh/images/customers/bw/british_council-logo-bw.webp"
-                  alt="mentos"
-                  loading="lazy"
-                  width="70%"
-                />
-              </picture>
-            </div>
-          </div>
+          ))}
         </section>
         {/* Put the above guy in another file for mapping and clean code */}
         <div className="flexibility">
-          <div className="flexibility-text">
-            <h2>
-              The flexibility and control <br />
-              you need to build innovative <br />
-              digital experiences
-            </h2>
-            <h3>Discover how Platform.sh can deliver business value</h3>
-          </div>
+          {flexibility.map((flexi) => (
+            <div className="flexibility-text">
+              <h2>
+                The flexibility and control <br />
+                you need to build innovative <br />
+                digital experiences
+              </h2>
+              <h3>{flexi.headthree}</h3>
+            </div>
+          ))}
         </div>
       </div>
       <div className="dropdown">
@@ -199,46 +149,25 @@ const Content = () => {
               secure, fully built, managed infrastructure—in seconds.
             </h3>
           </div>
-          <div className="platform-inpicture">
-            <img
-              src="https://platform.sh/images/home/circle-chart.svg"
-              alt="platform.sh's cycle"
-              width="700px"
-              height="auto"
-            />
-          </div>
+          {inPicture.map((pic) => (
+            <div className="platform-inpicture">
+              <img
+                src={pic.src}
+                alt={pic.alt}
+                width={pic.width}
+                height={pic.height}
+              />
+            </div>
+          ))}
         </div>
         <div className="grid-container">
-          <div className="grid-section">
-            <img
-              src="https://platform.sh/images/home/innovate.svg"
-              alt="innovate"
-            />
-            <h4>Innovate</h4>
-            <p>
-              Innovate faster because all the services you need are included—1
-              website or 1,000, get up and running quickly.
-            </p>
-          </div>
-          <div className="grid-section">
-            <img
-              src="https://platform.sh/images/home/focus.svg"
-              alt="innovate"
-            />
-            <h4>Focus</h4>
-            <p>
-              Focus on solving customer challenges—not on operating
-              infrastructure.
-            </p>
-          </div>
-          <div className="grid-section">
-            <img
-              src="https://platform.sh/images/home/deploy.svg"
-              alt="innovate"
-            />
-            <h4>Deploy</h4>
-            <p>Confidently update, integrate, and deploy code in real time.</p>
-          </div>
+          {gridSection.map((grid) => (
+            <div className="grid-section">
+              <img src={grid.src} alt={grid.alt} />
+              <h4>{grid.headFour}</h4>
+              <p>{grid.parag}</p>
+            </div>
+          ))}
         </div>
         {/* Deploy Card */}
         <div className="deploy-card">
@@ -255,34 +184,32 @@ const Content = () => {
           <div className="action-arrows">
             <p className="carousel prev">Previous</p>
             <p className="carousel next">Next</p>
-            <div className="companies-feedback active">
-              <img
-                className="company-logo"
-                src="https://platform.sh/images/customers/bw/sportrx-bw.png"
-                alt="sportrx-logo"
-                width="20%"
-                height="auto"
-              />
-              <h3>
-                Compared to our previous cloud infrastructure, our Platform.sh
-                environment has been very stable and performant. We spend much
-                less time dealing with performance and caching issues and more
-                time on end-user features that make the online experience better
-                for our customers.
-              </h3>
-              <div className="director-section">
+
+            {feedback.map((feed) => (
+              <div className="companies-feedback active">
                 <img
-                  className="director-image"
-                  src="https://platform.sh/images/industry/retail/saaed-fattahi_sportrx.png"
-                  alt="image Cecile"
-                  width="100px"
+                  className="company-logo"
+                  src={feed.src}
+                  alt={feed.alt}
+                  width={feed.width}
+                  height={feed.height}
                 />
-                <div className="director-detail">
-                  <p className="name">Saaed Fattahi</p>
-                  <p className="role">Director of Technology, SportRx</p>
+                <h3>{feed.text}</h3>
+                <div className="director-section">
+                  <img
+                    className="director-image"
+                    src={feed.src2}
+                    alt={feed.alt2}
+                    width={feed.width2}
+                  />
+                  <div className="director-detail">
+                    <p className="name">Saaed Fattahi</p>
+                    <p className="role">Director of Technology, SportRx</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+
             {/* <div className="companies-feedback">
               <img
                 src="https://platform.sh/images/customers/bw/sportrx-bw.png"
@@ -305,49 +232,17 @@ const Content = () => {
           <h2>What's new at Platform.sh</h2>
         </div>
         <div className="update-content">
-          <div className="updating">
-            <div>
-              <img
-                src="https://platform.sh/company/press/2022/platformsh-renews-partnership-with-adobe-commerce/images/cover.png"
-                alt=""
-              />
+          {updateContent.map((update) => (
+            <div className="updating">
+              <div>
+                <img src={update.src} alt={update.alt} />
+              </div>
+              <div className="update-text">
+                <h2>{update.heading}</h2>
+                <p>{update.paragraph}</p>
+              </div>
             </div>
-            <div className="update-text">
-              <h2>Press Release</h2>
-              <p>
-                Platform.sh renews partnership with Adobe to power the future of
-                commerce
-              </p>
-            </div>
-          </div>
-          <div className="updating">
-            <div>
-              <img
-                src="https://platform.sh/blog/2022/platformsh-announces-140-million-series-d-funding/images/cover.png"
-                alt=""
-              />
-            </div>
-            <div className="update-text">
-              <h2>Blog Post</h2>
-              <p>
-                <p>Platform.sh announces $140m series D round of funding</p>
-              </p>
-            </div>
-          </div>
-          <div className="updating">
-            <div>
-              <img
-                src="https://platform.sh/blog/2021/platformsh-joins-forces-with-blackfire/images/header@2x-100.jpg"
-                alt=""
-              />
-            </div>
-            <div className="update-text">
-              <h2>Blog Post</h2>
-              <p>
-                <p>Why Platform.sh is joining forces with Blackfire.io</p>
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
         {/* End of what's new */}
       </div>
@@ -359,27 +254,30 @@ const Content = () => {
       </div>
       <footer className="footer">
         <div className="footer-content">
-          <div className="platform">
-            <h2>platform.sh</h2>
-            <div className="deploy-numbers">
-              <span className="number">5</span>
-              <span className="number">1</span>
-              <span className="number">2</span>
-              <span className="number">6</span>
-              <span className="number">8</span>
-            </div>
-            <span className="deploy-text">
-              Deployments this week (including Fridays!)
-            </span>
-            <div className="media">
-              <p>git</p>
-              <p>twi</p>
-              <p>lin</p>
-              <p>fac</p>
-              <p>you</p>
-              <p>oka</p>
-            </div>
-          </div>
+          {footerContent.map((foot) => (
+            <>
+              <div className="platform">
+                <h2>{foot.heading2}</h2>
+                <div className="deploy-numbers">
+                  <span className="number">{foot.span}</span>
+                  <span className="number">{foot.span1}</span>
+                  <span className="number">{foot.span2}</span>
+                  <span className="number">{foot.span3}</span>
+                  <span className="number">{foot.span4}</span>
+                </div>
+                <span className="deploy-text">{foot.spanText}</span>
+                <div className="media">
+                  <p>git</p>
+                  <p>twi</p>
+                  <p>lin</p>
+                  <p>fac</p>
+                  <p>you</p>
+                  <p>oka</p>
+                </div>
+              </div>
+              </>
+        ))}
+
           <div>
             <h1 className="footer-section">Company</h1>
             <ul className="section-content">
@@ -431,7 +329,9 @@ const Content = () => {
               <li>Observability Suite</li>
             </ul>
           </div>
+       
         </div>
+      
         <div className="privacy-section">
           <ul>
             <li>System Status</li>
@@ -443,6 +343,8 @@ const Content = () => {
             <li>Report a Security Issue</li>
           </ul>
         </div>
+      
+
         <div className="support">
           <p>© 2022 Platform.sh. All rights reserved.</p>
           {/* oka */}
